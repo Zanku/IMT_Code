@@ -1,4 +1,5 @@
 function rounding ( value ){
+
     return (Math.round( value * 100) / 100);
 }
 
@@ -30,9 +31,7 @@ function sale ( value, rate ){
     return rounding( value / rate );
 }
 
-//console.log(calculation.sale( 6, 26).buy( 150, 26));
 
 
 module.exports.Calculation = Calculation;
 
-//console.log(calculation(150, 26, 'buy'));
