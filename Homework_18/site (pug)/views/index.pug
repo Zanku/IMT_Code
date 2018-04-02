@@ -1,0 +1,23 @@
+extends header
+
+block content
+    - for( var i = 0; i < data.length; i++ ){
+    div(class="butt")
+        a(class="change" href='/content/edit/' + i ) Edit
+        a(class="change" href='/content/delete/' + i ) X
+        div
+            - if ( data[i].tags instanceof Array ){
+
+            - for( var j = 0; j < data[i].tags.length; j++ ){
+              a(class="tags")= data[i].tags[j]
+
+            - }} else {
+            a(class="tags")= data[i].tags
+             - }
+
+        div
+            h2= data[i].title
+            img(src= data[i].filling )
+
+    - }
+        script(src="main.js")
