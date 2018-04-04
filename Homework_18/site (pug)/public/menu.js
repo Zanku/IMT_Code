@@ -24,7 +24,7 @@ for ( var i = 0; i < menu.length; i++){
                 location.href = '/contacts';
                 break;
             case 'Добавить пост' :
-                location.href = 'addPost';
+                location.href = 'add';
                 break;
         }
     })

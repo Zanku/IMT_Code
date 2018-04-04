@@ -15,7 +15,7 @@ app.get( '/', function ( req, res ) {
                             data : data } );
 });
 
-app.get( '/addPost', function( req, res ){
+app.get( '/add', function( req, res ){
     res.render( 'addPost', { title : "Добавление поста" })
 });
 
@@ -43,7 +43,7 @@ app.get( '/contacts', function( req, res ){
 });
 
 // отправка почты
-app.post( '/sendEmail', function ( req, res ) {
+app.post( '/contacts', function ( req, res ) {
 
    console.log( sendEmail( req.body) );
 
@@ -82,11 +82,7 @@ app.get( '/content/edit/:id', function( req, res ){
 
 app.post( '/content/edit/:id', function ( req, res ) {
 
-    console.log( req.body.tags );
     req.body.tags = verif( req.body.tags );
-
-    console.log( req.body.tags );
-
     data[ req.params.id ] = req.body;
 
     res.redirect('/');

@@ -3,8 +3,8 @@ extends header
 block content
     - for( var i = 0; i < data.length; i++ ){
     div(class="butt")
-        a(class="change" href='/content/edit/' + i ) Edit
-        a(class="change" href='/content/delete/' + i ) X
+        a(class="change" href="/content/edit/" + i ) Edit
+        a(class="change" href="/content/delete/" + i ) X
         div
             - if ( data[i].tags instanceof Array ){
 
