@@ -13,6 +13,7 @@ app.use( express.static( __dirname + '/public' ) );
 
 app.route( '/')
     .get( function ( req, res ) {
+        console.log( req );
         res.render( 'index', {   title : "Главная",
             data : data } );
     });
@@ -25,17 +26,20 @@ app.route( '/content/edit/:id')
 // здесь творится чудо
 // почему     req.params.id  содержит 3 переменные
 //    [ '0' ][ 'menu.js' ][ 'common.css' ]
-        console.log( req.params.id );
+
+            //console.log( req );
+
 
 // Заглушка : получение данных о первом объекте в JSON
 // при заглушке запрос отрабатывается до конца и высылается ответ с новой страницей
+        /*
         var obj ={ title : data[0].title,
             tags : data[0].tags.join(' '),
             filling : data[0].filling
         };
-
+*/
 // Так тут должно работать
-/*
+
         // получаем номер элемента черех параметры адресной строки
         var index = ( Number( req.params.id ) );
 
@@ -49,7 +53,7 @@ app.route( '/content/edit/:id')
                     tags : data[index].tags,
                  filling : data[index].filling
          };
-*/
+
         res.render( 'edit',  { title : "Модификация",
             data : obj } );
     })
@@ -58,7 +62,6 @@ app.route( '/content/edit/:id')
 // проведение изменений в нужном элементе и возврат на главную
         req.body.tags = verif( req.body.tags );
         data[ req.params.id ] = req.body;
-
         res.redirect('/');
     });
 
