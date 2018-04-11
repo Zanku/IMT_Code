@@ -1,3 +1,3 @@
-/**
- * Created by Fox on 11.04.2018.
- */
+module.exports = function(app, db) {
+
+};
