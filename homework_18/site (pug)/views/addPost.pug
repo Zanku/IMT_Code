@@ -1,0 +1,30 @@
+extends header
+
+block content
+    div(class="butt")
+        form(method="post")
+            input(type="text" placeholder="Название темы" name="title" autofocus)
+            br
+            input(type="text" placeholder="Тэги разделяются пробелом" name="tags")
+            br
+            input(type="text" placeholder="Изображение для вставки" name="filling")
+            br
+            input(type="submit" value="Add" style="width: 50px")
+
+            script.
+                var form = document.getElementsByTagName('form')[0];
+                form.action = 'add'
+                form.onsubmit = function() {
+                var check = true;
+                var inputs = document.getElementsByTagName('input');
+                var length = inputs.length - 1;
+                for ( var i = 0; i < length; i++ ){
+                if ( inputs[i].value === '' ){
+                inputs[i].style.border = "2px solid red";
+                check = false;
+                }
+                }
+                return check;
+                };
+
+
