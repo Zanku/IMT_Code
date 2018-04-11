@@ -1,5 +1,5 @@
 var express = require('express');
-app = express();
+var app = express();
 var courses = require('./data/courses.json');
 var bodyParser = require('body-parser');
 
