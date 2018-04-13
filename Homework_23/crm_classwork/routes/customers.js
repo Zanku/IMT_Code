@@ -2,7 +2,7 @@ module.exports.all = function ( req, res ) {
     req.getConnection( function ( err, connection) {
         connection.query( 'SELECT * FROM customers', function( err, rows ){
             if ( err ) throw new Error;
-            res.render('customers', { page_title : 'IMT-CRM Пользователи', data : rows });
+            res.render('customers', { page_title : 'IMT-CRM Пользователи', data : rows } );
         });
     });
 };
@@ -32,7 +32,7 @@ module.exports.save = function( req, res ){
         };
         connection.query( 'INSERT INTO customers SET ?', [data], function ( err, rows ) {
             if ( err ) throw new Error;
-            res.redirect('customers');
+            res.redirect('/customers');
         });
     });
 };

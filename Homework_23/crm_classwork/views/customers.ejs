@@ -1,4 +1,4 @@
-<%= include layouts/header.ejs %>
+<%- include layouts/header.ejs %>
             <table class="table table-bordered">
                 <tr>
                     <th width="50px">Номер</th>
@@ -9,9 +9,9 @@
                     <th>Действия</th>
                 </tr>
                 <% if (data.length){
-                    for (var i = 0; i < data.length; i++){ %>
+                    for (var i = 0; i < data.length; i++) { %>
                     <tr>
-                        <td><%= (i + 1) %></td>
+                        <td><%= (i+1) %></td>
                         <td><%= data[i].name %></td>
                         <td><%= data[i].address %></td>
                         <td><%= data[i].email %></td>
@@ -21,18 +21,18 @@
                             <button type="button" class="btn btn-danger"><a style="text-decoration: none; color: white" href="../customers/delete/<%= data[i].id %>">Удалить</a></button>
                         </td>
                     </tr>
-               <% }
-                } else { %>
+                    <% }
+                    } else { %>
                      <tr>
                          <td colspan="3">No user</td>
                      </tr>
-              <% } %>
+                    <% } %>
             </table>
             <div class="data-btn">
-                <button type="button" class="btn btn-default btn-sm col-md-1 col-md-offset-11" onclick="window.location.href = '../customers/add';">Добавить</button>
+                <button type="button" class="btn btn-default btn-sm col-md-1 col-md-offset-11" onclick="window.location.href = '/customers/add';">Добавить</button>
             </div>
         </div>
-<%= include layouts/footer.ejs %>
+<%- include layouts/footer.ejs %>
 
 
 
