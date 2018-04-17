@@ -1,3 +1,4 @@
-/**
- * Created by Fox on 11.04.2018.
- */
+module.exports = {
+    url : "mongodb://localhost:27017"
+    // URL базы данных
+};
