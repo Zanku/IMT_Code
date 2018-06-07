@@ -1,0 +1,28 @@
+#main{
+    margin : 50px auto;
+    background-color : cornflowerblue;
+    width : 380px;
+    text-align : center;
+    padding : 10px;
+    border-radius: 10px;
+}
+
+inputs{
+    margin : 0px 5px;
+}
+
+table{
+    margin : 0 auto;
+}
+
+td{
+    padding: 0 5px;
+}
+
+a{
+    font-family: "Arial Black";
+}
+
+input:first-child{
+
+}

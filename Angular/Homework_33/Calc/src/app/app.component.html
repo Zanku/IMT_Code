@@ -1,0 +1,18 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div id = "main" (click)="eventsDefinition( $event )">
+  <div>
+    <table >
+      <tr>
+        <td><input [autofocus]  [value] = "first" (input)="first = $event.target.value" ></td>
+        <td><a>{{sign}}</a></td>
+        <td><input  [(ngModel)] = "second" ></td>
+      </tr>
+    </table>
+  </div>
+  <div>
+    <h3>{{result}}</h3>
+  </div>
+  <div>
+    <button>Result</button>
+  </div>
+</div>
