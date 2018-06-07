@@ -13,4 +13,9 @@ export class AppComponent {
     this.value = event.target.value;
     console.log( this.value );
   }
+
+  OnSignChange( event ){
+    this.sign = event.target.value;
+    console.log( this.sign );
+  }
 }

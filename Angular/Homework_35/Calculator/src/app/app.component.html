@@ -1,2 +1,2 @@
 <app-operand [value]="value" (change) = "onInputChange( $event )"></app-operand>
-<app-sign></app-sign>
+<app-sign [sign]="sign" (input)="OnSignChange( $event )" ></app-sign>
