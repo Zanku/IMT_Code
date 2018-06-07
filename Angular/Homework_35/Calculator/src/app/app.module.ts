@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { OperandComponent } from './operand/operand.component';
-import { SingComponent } from './sing/sing.component';
+import { SingComponent } from './sign/sign.component';
 
 @NgModule({
   declarations: [
