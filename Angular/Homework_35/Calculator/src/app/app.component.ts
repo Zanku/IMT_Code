@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  value = "";
+  sign = "";
+
+  onInputChange( event ){
+    this.value = event.target.value;
+    console.log( this.value );
+  }
 }
