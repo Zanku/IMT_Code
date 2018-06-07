@@ -1,0 +1,12 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div id = "main">
+  <div id = "container">
+    <app-operand [count] = "0" [warn]="warn[0]"
+                 [value]="value[0]" (change) = "changeData( $event )"></app-operand>
+    <p>+</p>
+    <app-operand [count] = "1" [warn]="warn[1]"
+                 [value]="value[1]" (change) = "changeData( $event )"></app-operand>
+    <button (click)="onBtnClick()">Calculate</button>
+    <app-result [result]="result"></app-result>
+  </div>
+</div>

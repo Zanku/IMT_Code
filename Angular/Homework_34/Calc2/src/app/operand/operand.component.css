@@ -1,0 +1,16 @@
+div{
+    color : red;
+    font-weight: bold;
+    position : relative;
+}
+
+input{
+    width: 60%;
+}
+
+.warn{
+    position: absolute;
+    left: 72%;
+    top : 0;
+    width: 100%;
+}
