@@ -9,13 +9,4 @@ export class AppComponent {
   value = "";
   sign = "";
 
-  onInputChange( event ){
-    this.value = event.target.value;
-    console.log( this.value );
-  }
-
-  OnSignChange( event ){
-    this.sign = event.target.value;
-    console.log( this.sign );
-  }
 }

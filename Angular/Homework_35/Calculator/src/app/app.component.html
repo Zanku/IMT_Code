@@ -1,2 +1,4 @@
-<app-operand [value]="value" (change) = "onInputChange( $event )"></app-operand>
-<app-sign [sign]="sign" (input)="OnSignChange( $event )" ></app-sign>
+<app-operand [value]="value" (change) = "value = $event.target.value"></app-operand>
+<app-sign [sign]="sign" (input) = "sign = $event.target.value"></app-sign>
+<p>operand = {{value}}</p>
+<p>sign = {{sign}}</p>
