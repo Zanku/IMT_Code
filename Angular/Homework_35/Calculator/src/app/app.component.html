@@ -1,9 +1,14 @@
+<!-- Bug сидит тут -->
 <ng-template ngFor  [ngForOf] = "bugBypass" let-i = "index">
+<!-- и исправляется изменением переменной
+При передаче значения в input, к которому относится конструкция ng-For в следующий
+элемент такого типа (input + [ngFrOf] = "value") во VIEW переходит заданное значение
+ т.е. только во VIEW, а для элемента, которому давалось значение оно задается как положено-->
     <app-operand   [value] = "values[i]"  (change) = "values[i] = $event.target.value"></app-operand>
     <app-sign       [sign] = " signs[i]"   (input) = " signs[i] = $event.target.value"
               *ngIf = "(values.length - 1) > i"></app-sign>
 </ng-template>
-<app-button (counting)="calculate()"></app-button>
+<app-button (counting)="calculate()" (clearing)="cleaning()"></app-button>
 <app-result [result]="result"></app-result>
 
 <button (click)="test()">TEST</button>

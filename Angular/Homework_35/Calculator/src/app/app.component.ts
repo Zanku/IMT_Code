@@ -7,11 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   OPERANDS  = 5;
-  signs : string[] = [];
-  values : string[] = [];
-  result : number;
+  signs     : string[] = [];
+  values    : string[] = [];
+  result    : string;
   rawString : string;
-  bugBypass :  string[] = [];
+  bugBypass : string[] = [];
 
   constructor(){
     for (let i = 0; i < (this.OPERANDS - 1); i++){
@@ -36,11 +36,20 @@ export class AppComponent {
   calculate(){
     this.transformData();
     try {
-      this.result = eval( this.rawString );
+      this.result = String( eval( this.rawString ) );
     }
     catch ( e ){
       console.log( e );
     }
+  }
+
+  cleaning(){
+    for (let i = 0; i < (this.OPERANDS - 1); i++){
+      this.values[i] = "";
+       this.signs[i] = "";
+    }
+    this.values[ this.OPERANDS - 1 ] = "";
+    this.result = "";
   }
 
   test(){

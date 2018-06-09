@@ -7,7 +7,7 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 })
 export class ButtonComponent implements OnInit {
   @Output() counting = new EventEmitter();
-
+  @Output() clearing = new EventEmitter();
   constructor() { }
 
   ngOnInit() {
