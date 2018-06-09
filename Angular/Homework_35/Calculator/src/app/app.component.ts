@@ -6,7 +6,21 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  value = "";
-  sign = "";
+  OPERANDS  = 5;
+  sign : string[] = [];
+  values : string[] = [];
 
+  constructor(){
+    for (let i = 0; i < (this.OPERANDS - 1); i++){
+      this.values.push("");
+      this.sign.push("");
+    }
+    this.values.push("");
+  }
+
+
+  test(){
+    console.log( this.values );
+    console.log( this.sign );
+  }
 }
