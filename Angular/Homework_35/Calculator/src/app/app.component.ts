@@ -9,6 +9,8 @@ export class AppComponent {
   OPERANDS  = 5;
   sign : string[] = [];
   values : string[] = [];
+  result : number;
+  rawString : string;
 
   constructor(){
     for (let i = 0; i < (this.OPERANDS - 1); i++){
@@ -18,6 +20,9 @@ export class AppComponent {
     this.values.push("");
   }
 
+  transformData(){
+    
+  }
 
   test(){
     console.log( this.values );
