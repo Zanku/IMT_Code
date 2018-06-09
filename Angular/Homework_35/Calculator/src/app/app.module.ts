@@ -6,6 +6,7 @@ import { OperandComponent } from './operand/operand.component';
 import { SingComponent } from './sign/sign.component';
 import { ResultComponent } from './result/result.component';
 import { ButtonComponent } from './button/button.component';
+import { ValidationDirective } from './validation.directive';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { ButtonComponent } from './button/button.component';
     OperandComponent,
     SingComponent,
     ResultComponent,
-    ButtonComponent
+    ButtonComponent,
+    ValidationDirective
   ],
   imports: [
     BrowserModule
