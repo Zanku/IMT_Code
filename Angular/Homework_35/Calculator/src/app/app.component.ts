@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import {tryCatch} from "rxjs/internal/util/tryCatch";
 
 @Component({
   selector: 'app-root',
@@ -12,13 +11,16 @@ export class AppComponent {
   values : string[] = [];
   result : number;
   rawString : string;
+  bugBypass :  string[] = [];
 
   constructor(){
     for (let i = 0; i < (this.OPERANDS - 1); i++){
       this.values.push("");
       this.signs.push("");
+      this.bugBypass.push("");
     }
     this.values.push("");
+    this.bugBypass.push("");
   }
 
 // because signs.length if shorter, we use it and add last element of values
@@ -45,4 +47,5 @@ export class AppComponent {
     console.log( this.values );
     console.log( this.signs );
   }
+
 }
