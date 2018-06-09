@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {tryCatch} from "rxjs/internal/util/tryCatch";
 
 @Component({
   selector: 'app-root',
@@ -28,6 +29,16 @@ export class AppComponent {
     } );
     this.rawString += this.values[ this.signs.length ];
     console.log( this.rawString);
+  }
+
+  calculate(){
+    this.transformData();
+    try {
+      this.result = eval( this.rawString );
+    }
+    catch ( e ){
+      console.log( e );
+    }
   }
 
   test(){

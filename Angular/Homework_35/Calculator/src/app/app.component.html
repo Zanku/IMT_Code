@@ -3,5 +3,5 @@
     <app-sign [sign]="signs[i]" (input) = "signs[i] = $event.target.value"
               *ngIf = "(values.length - 1) > i" defaultValue = "1"></app-sign>
 </ng-template>
+<app-button (counting)="calculate()"></app-button>
 <app-result [result]="result"></app-result>
-<button (click) = "transformData()">cons</button>
