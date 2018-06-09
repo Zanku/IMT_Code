@@ -13,7 +13,4 @@ export class ButtonComponent implements OnInit {
   ngOnInit() {
   }
 
-  startCounting(){
-    this.counting.emit();
-  }
 }
