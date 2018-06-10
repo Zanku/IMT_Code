@@ -6,5 +6,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+
+  list = [
+    { name : "Вынести мусор",   status : "Working"},
+    { name : "Помыть посуду",   status : "none"},
+    { name : "Завладеть миром", status : "none"}
+  ];
+
+  removeItem( event ){
+    this.list = Object.create( this.list.filter( ( item, i  ) => {
+      return ( i !== event )
+    }));
+  }
 }
