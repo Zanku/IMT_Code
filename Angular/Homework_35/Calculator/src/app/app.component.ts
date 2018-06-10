@@ -34,6 +34,7 @@ export class AppComponent {
   }
 
   calculate(){
+    this.dataValidation();
     this.transformData();
     try {
       this.result = String( eval( this.rawString ) );
@@ -52,9 +53,19 @@ export class AppComponent {
     this.result = "";
   }
 
-  test(){
-    console.log( this.values );
-    console.log( this.signs );
+// Last hope on validation
+  dataValidation(){
+    this.values.forEach( ( item, i ) => {
+        if ( Object.is( Number( item ), NaN ) ){
+          this.values[i] = "Here must be DIGITS";
+          throw new Error(`Wrong symbols ${item}. You must use DIGITS`);
+        }
+    });
+    this.signs.forEach( ( item, i ) => {
+      if ( !Object.is( item.match(/\w+/), null ) ){
+          this.signs[i] = "Wrong Symbols";
+          throw new Error(`Wrong symbols ${item}`);
+      }
+    } )
   }
-
 }
