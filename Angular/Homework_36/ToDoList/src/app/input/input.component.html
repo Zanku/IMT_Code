@@ -1,3 +1,12 @@
-<p>
-  input works!
-</p>
+<div>
+  <input type="text" [value] = "inputValue"
+         (change)="inputValue = $event.target.value">
+  <select name="status" id="" [value] = "elemStatus"
+          (change)="elemStatus = $event.target.value">
+    <option disabled>Статус</option>
+    <option *ngFor="let item of status; index as i"
+            [value]="item.condition">{{item.condition}}</option>
+  </select>
+  <button (click)="addElementToList()">Add</button>
+</div>
+
