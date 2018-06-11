@@ -1,9 +1,11 @@
-<table>
-    <h2>To Do List</h2>
-    <tr *ngFor = "let item of list; index as i" [appChangeStatus] = "status">
-        <app-list
-            [index]="i + 1" [name]="item.name" [status]="item.status"
-            (remove)="removeItem( $event )"  ></app-list>
-    </tr>
-</table>
-<app-input [status]="status" (addElement)="addItem( $event )" ></app-input>
+<div id = "main">
+    <table>
+        <div id = "title">To Do List</div>
+        <tr *ngFor = "let item of list; index as i" [appChangeStatus] = "status">
+            <app-list
+                [index]="i + 1" [name]="item.name" [status]="item.status"
+                (remove)="removeItem( $event )"  ></app-list>
+        </tr>
+    </table>
+    <app-input [status]="status" (addElement)="addItem( $event )" ></app-input>
+</div>

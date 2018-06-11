@@ -1,12 +1,13 @@
-<div>
-  <input type="text" [value] = "inputValue"
+<div id="input">
+  <input type="text" [value] = "inputValue" class="inpElems"
          (change)="inputValue = $event.target.value; toggleDisableButton()">
-  <select name="status" id="" [value] = "elemStatus"
+  <select name="status" id="" [value] = "elemStatus" class="inpElems"
          (change)="elemStatus = $event.target.value; toggleDisableButton()">
     <option disabled>Статус</option>
     <option *ngFor="let item of status; index as i"
             [value]="item.condition">{{item.condition}}</option>
   </select>
-  <button [disabled] = "buttonDisable" (click)="addElementToList()">Add</button>
+  <button [disabled] = "buttonDisable" (click)="addElementToList()"
+          class="inpElems" >Add</button>
 </div>
 

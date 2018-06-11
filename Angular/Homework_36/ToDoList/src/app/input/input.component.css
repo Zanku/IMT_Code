@@ -1,0 +1,18 @@
+#input{
+    width: 95%;
+    background-color: green;
+    margin: 5% auto 1% auto;
+}
+
+input {
+    width: 40%;
+}
+
+select{
+    width: 30%;
+}
+
+.inpElems{
+    text-align: center;
+    margin: 5px;
+}

@@ -1,0 +1,20 @@
+#main{
+    width: 33%;
+    padding: 1%;
+    margin: 5% auto 0 auto;
+    text-align: center;
+    background-color: green;
+}
+
+table{
+    width: 95%;
+    margin: auto;
+}
+
+#title{
+    font-family: "Arial Black";
+    font-size: 32px;
+    font-weight: bold;
+    margin: 0 0 13px 0;
+
+}

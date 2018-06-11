@@ -7,9 +7,19 @@
 td{
     padding: 10px;
     text-align: center;
-
+    position: relative;
 }
 
 .beauty{
     width: 200px;
+}
+
+.font{
+    font-size: 18px;
+}
+
+img{
+    position: absolute;
+    top: 30%;
+    left: 0%;
 }
