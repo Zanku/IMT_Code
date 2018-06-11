@@ -29,7 +29,7 @@ export class DataServiceService {
     return this.list;
   }
 
-  addNewItem( item : List[] ){
+  addNewItem( item ){
     this.list.push( item );
   }
 

@@ -16,8 +16,8 @@ export class AppComponent implements OnInit {
     list :   List[] = [];
   status : Status[] = [];
 
-  addItem( item : List[] ){;
-    this.dataService.addNewItem( item )
+  addItem( item : List[] ){
+    this.dataService.addNewItem( item );
   }
 
   removeItem( index : number ){
