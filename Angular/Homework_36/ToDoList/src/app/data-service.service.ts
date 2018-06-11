@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { List } from "./list";
-import { Status } from "./list";
+import { Status } from "./status";
 
 @Injectable({
   providedIn: 'root'
