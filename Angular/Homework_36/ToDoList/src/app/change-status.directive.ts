@@ -1,4 +1,4 @@
-import {AfterViewInit, Directive, ElementRef, HostListener, Input, OnInit} from '@angular/core';
+import {AfterViewInit, Directive, ElementRef, HostListener, Input } from '@angular/core';
 
 
 @Directive({
@@ -10,7 +10,6 @@ export class ChangeStatusDirective implements AfterViewInit {
   constructor( private elem: ElementRef ) {}
 
   ngAfterViewInit(){
-    console.log("INIT");
     this.cheak();
   }
 
