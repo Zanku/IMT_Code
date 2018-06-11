@@ -9,14 +9,14 @@ export class AppComponent {
 
   list = [
     { name : "Вынести мусор",   status : "Working"},
-    { name : "Помыть посуду",   status : "hover"   },
-    { name : "Завладеть миром", status : "hover"   }
+    { name : "Помыть посуду",   status : "Hover"   },
+    { name : "Завладеть миром", status : "Hover"   }
   ];
 
   status = [
-    { condition : "hover",    color : "red"   },
+    { condition : "Hover",    color : "red"   },
     { condition : "Working",  color : "yellow"},
-    { condition : "done",     color : "green" }
+    { condition : "Done",     color : "green" }
   ];
 
 
