@@ -1,4 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import { List } from ".././list";
 
 @Component({
   selector: 'app-input',
@@ -10,9 +11,9 @@ export class InputComponent implements OnInit {
 
   @Output() addElement = new EventEmitter();
 
-  element;
+
   elemStatus : string;
-  inputValue : string
+  inputValue : string;
   buttonDisable = true;
 
   constructor() {
@@ -23,8 +24,7 @@ export class InputComponent implements OnInit {
   }
 
   addElementToList(){
-    this.element = { name : this.inputValue, status : this.elemStatus};
-    this.addElement.emit( this.element );
+    this.addElement.emit( new List(this.inputValue, this.elemStatus) );
     this.renew();
   }
 
@@ -36,9 +36,9 @@ export class InputComponent implements OnInit {
 
   toggleDisableButton(){
     if ( this.inputValue === "" || this.elemStatus === ""){
-      this.buttonDisable = true;
+        this.buttonDisable = true;
     } else {
-      this.buttonDisable = false;
+        this.buttonDisable = false;
     }
   }
 

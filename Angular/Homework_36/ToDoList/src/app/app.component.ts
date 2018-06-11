@@ -1,32 +1,32 @@
-import { Component } from '@angular/core';
+import {Component, OnInit}    from '@angular/core';
+import { DataServiceService } from "./data-service.service";
+import { List }   from "./list";
+import { Status } from  "./status";
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  providers : [DataServiceService]
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
 
-  list = [
-    { name : "Вынести мусор",   status : "Working"},
-    { name : "Помыть посуду",   status : "Hover"   },
-    { name : "Завладеть миром", status : "Hover"   }
-  ];
+  constructor( private dataService : DataServiceService){}
 
-  status = [
-    { condition : "Hover",    color : "red"   },
-    { condition : "Working",  color : "yellow"},
-    { condition : "Done",     color : "green" }
-  ];
+    list :   List[] = [];
+  status : Status[] = [];
 
-
-  addItem( item ){
-    this.list.push( item );
+  addItem( item : List[] ){;
+    this.dataService.addNewItem( item )
   }
 
-  removeItem( event ){
-    this.list = Object.create( this.list.filter( ( item, i  ) => {
-      return ( i !== event )
-    }));
+  removeItem( index : number ){
+    this.dataService.removeTargetItem( index )
+    this.list = this.dataService.getList();
+  }
+
+  ngOnInit(){
+    this.list   = this.dataService.getList();
+    this.status = this.dataService.getStatus();
   }
 }

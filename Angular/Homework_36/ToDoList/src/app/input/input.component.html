@@ -1,5 +1,5 @@
 <div id="input">
-  <input type="text" [value] = "inputValue" class="inpElems"
+  <input type="text"          [value] = "inputValue" class="inpElems"
          (change)="inputValue = $event.target.value; toggleDisableButton()">
   <select name="status" id="" [value] = "elemStatus" class="inpElems"
          (change)="elemStatus = $event.target.value; toggleDisableButton()">

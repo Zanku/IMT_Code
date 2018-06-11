@@ -10,7 +10,7 @@ export class ListComponent implements OnInit {
   @Input()  status : string;
   @Input()  index  : number;
 
-  @Output() remove = new EventEmitter();
+  @Output() remove = new EventEmitter<number>();
 
   constructor() { }
 
