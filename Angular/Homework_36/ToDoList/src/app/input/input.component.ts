@@ -12,7 +12,8 @@ export class InputComponent implements OnInit {
 
   element;
   elemStatus : string;
-  inputValue : string;
+  inputValue : string
+  buttonDisable = true;
 
   constructor() {
     this.renew();
@@ -30,5 +31,16 @@ export class InputComponent implements OnInit {
   renew(){
     this.inputValue = "";
     this.elemStatus = "";
+    this.toggleDisableButton();
   }
+
+  toggleDisableButton(){
+    if ( this.inputValue === "" || this.elemStatus === ""){
+      this.buttonDisable = true;
+    } else {
+      this.buttonDisable = false;
+    }
+  }
+
+
 }

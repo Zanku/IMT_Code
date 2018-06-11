@@ -6,9 +6,7 @@ import {Directive, ElementRef, HostListener, Input, ngAfterViewInit} from '@angu
 export class ChangeStatusDirective {
   @Input("appChangeStatus") status;
 
-  constructor( private elem : ElementRef ) {
-
-  }
+  constructor( private elem : ElementRef ) {}
 
   ngAfterViewInit(){
     this.cheak();
