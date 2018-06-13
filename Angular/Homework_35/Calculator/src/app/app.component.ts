@@ -42,6 +42,10 @@ export class AppComponent {
     catch ( e ){
       console.log( e );
     }
+    console.log(" Values ");
+    console.log(this.values);
+    console.log(" Signs ");
+    console.log(this.signs);
   }
 
   cleaning(){
