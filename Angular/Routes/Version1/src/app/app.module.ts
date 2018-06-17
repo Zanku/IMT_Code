@@ -7,6 +7,7 @@ import { Route, RouterModule } from '@angular/router';
 import { MainComponent } from './main/main.component';
 import { UsersComponent } from './users/users.component';
 import { ContactsComponent } from './contacts/contacts.component';
+import { BasketComponent } from './basket/basket.component';
 
 
 const  appRoutes : Route[] = [
@@ -19,7 +20,8 @@ const  appRoutes : Route[] = [
     AppComponent,
     MainComponent,
     UsersComponent,
-    ContactsComponent
+    ContactsComponent,
+    BasketComponent
   ],
   imports: [
     BrowserModule,
