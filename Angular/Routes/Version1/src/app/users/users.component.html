@@ -1,3 +1,8 @@
 <div>
-  user name is = {{ aUser.name }}
+  <ul>
+    <li *ngFor = "let aUser of users; index as i">
+      {{aUser.id}} - {{aUser.name}} - {{aUser.surname}} - {{aUser.email}}
+      <button (click) = "deleteUser( aUser.id )">Delete</button>
+    </li>
+  </ul>
 </div>

@@ -1,10 +1,9 @@
 import { Injectable } from '@angular/core';
 import { User } from "./user";
-import { Observable, of } from "rx.js";
-import {of} from "rxjs";
+import { Observable, of } from "rxjs";
 
 
-const userList : User[] = [
+let userList : User[] = [
     { id : 0, name : "Adam",   surname : "Smith",   email : "asdas@gmail.com" },
     { id : 1, name : "Fedor",  surname : "Bubkin",  email : "babaika@i.ua" },
     { id : 2, name : "Eva",    surname : "Johnson", email : "johnson@i.ua" },
@@ -20,11 +19,17 @@ export class UsersDetailsService {
 
   constructor( ) { }
 
-  getUser( id : number ) : Observable<User>{
-    return of( userList[ id ] );
+
+  getUserList() : Observable< User[] >{
+    return of( userList );
   }
 
-  getUserList(){
-    return userList;
+  getUser( i : number ){
+    return userList.find( ({id}) => id === i );
+  }
+
+  deleteUser( i : number ) : Observable< null >{
+    userList = userList.filter( ({id}) => id !== i );
+    return of( null )
   }
 }

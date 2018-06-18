@@ -11,20 +11,33 @@ import {UsersDetailsService} from "../users-details.service";
 export class UsersComponent implements OnInit {
 
   users : User[] = [];
-  aUser : User;
+
   constructor( private userService : UsersDetailsService ){
-    this.aUser = userService.getUser( 1 );
-    this.users = userService.getUserList();
+    this.updateList();
   }
 
   ngOnInit(){
   }
 
-  getUser( id ){
-    return this.aUser;
+  getUser( id : number ){
+    return this.userService.getUser( id );
   }
 
   getUsersList(){
     return this.users;
+  }
+
+  updateList(){
+//    this.users = this.userService.getUserList()
+    this.userService.getUserList().subscribe( (data) => {
+      this.users = data;
+    } )
+  }
+
+  deleteUser( id : number ){
+//    this.userService.deleteUser( id );
+    this.userService.deleteUser( id )
+        .subscribe( () => this.updateList() )
+  //  this.updateList();
   }
 }
