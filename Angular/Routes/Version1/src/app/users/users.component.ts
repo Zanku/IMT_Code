@@ -1,6 +1,7 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { User } from '../user';
 import {UsersDetailsService} from "../users-details.service";
+import { switchMap } from "rxjs/operators";
 
 
 @Component({
@@ -35,9 +36,17 @@ export class UsersComponent implements OnInit {
   }
 
   deleteUser( id : number ){
+// FIRST
 //    this.userService.deleteUser( id );
+//  this.updateList();
+
+// SECOND
+//    this.userService.deleteUser( id )
+//        .subscribe( () => this.updateList() )
+
     this.userService.deleteUser( id )
-        .subscribe( () => this.updateList() )
-  //  this.updateList();
+        .switchMap( () => this.userService.getUserList() )
+        .subscribe( ( list : Users[]) => this.users = list )
+
   }
 }
