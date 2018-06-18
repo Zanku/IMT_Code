@@ -10,6 +10,7 @@ import { ContactsComponent } from './contacts/contacts.component';
 import { BasketComponent } from './basket/basket.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { NavigationComponent } from './navigation/navigation.component';
+import { UserInfoComponent } from './user-info/user-info.component';
 
 
 const  appRoutes : Route[] = [
@@ -30,7 +31,8 @@ const  appRoutes : Route[] = [
     ContactsComponent,
     BasketComponent,
     NotFoundComponent,
-    NavigationComponent
+    NavigationComponent,
+    UserInfoComponent
   ],
   imports: [
     BrowserModule,
