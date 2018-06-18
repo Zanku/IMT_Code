@@ -5,5 +5,9 @@ import { Injectable } from '@angular/core';
 })
 export class UsersDetailsService {
 
-  constructor() { }
+  constructor( ) {
+    users : User[] = {
+      name : "Adam"
+    }
+  }
 }
