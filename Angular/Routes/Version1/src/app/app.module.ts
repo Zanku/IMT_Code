@@ -11,7 +11,11 @@ import { BasketComponent } from './basket/basket.component';
 
 
 const  appRoutes : Route[] = [
-//  { path : 'users', component : UsersComponent }
+  { path : '', redirectTo : "main", pathMatch : "full"  },
+  { path : 'main', component : MainComponent },
+  { path : 'users', component : UsersComponent },
+  { path : 'contacts', component : ContactsComponent },
+  { path : 'basket', component : BasketComponent }
 ]
 
 
