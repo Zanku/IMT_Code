@@ -9,6 +9,7 @@ import { UsersComponent } from './users/users.component';
 import { ContactsComponent } from './contacts/contacts.component';
 import { BasketComponent } from './basket/basket.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { NavigationComponent } from './navigation/navigation.component';
 
 
 const  appRoutes : Route[] = [
@@ -28,7 +29,8 @@ const  appRoutes : Route[] = [
     UsersComponent,
     ContactsComponent,
     BasketComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    NavigationComponent
   ],
   imports: [
     BrowserModule,
