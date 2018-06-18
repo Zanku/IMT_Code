@@ -1,14 +1,18 @@
 .str{
-    background-color: red;
     width : 200px;
     display: inline-block;
     vertical-align: top;
     text-align: center;
 }
 
-.str a{
+.str a {
     color: black;
     font-weight: bold;
     font-size: 20px;
     text-decoration: none;
+}
+
+.active{
+    background-color: orange;
+    color: red;
 }
