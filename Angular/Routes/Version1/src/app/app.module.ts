@@ -17,6 +17,7 @@ const  appRoutes : Route[] = [
   { path : '', redirectTo : "main", pathMatch : "full"  },
   { path : 'main',      component : MainComponent },
   { path : 'users',     component : UsersComponent },
+  { path : 'users/:id', component : UserInfoComponent },
   { path : 'contacts',  component : ContactsComponent },
   { path : 'basket',    component : BasketComponent },
   { path : '**',        component : NotFoundComponent }

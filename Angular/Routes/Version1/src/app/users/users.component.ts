@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { User } from '../user';
 import {UsersDetailsService} from "../users-details.service";
 import { switchMap } from "rxjs/operators";
+import {Observable, of } from "rxjs";
 
 
 @Component({
@@ -20,8 +21,8 @@ export class UsersComponent implements OnInit {
   ngOnInit(){
   }
 
-  getUser( id : number ){
-    return this.userService.getUser( id );
+  getUser( id : number ) : Observable< User >{
+    return this.userService.getUser( id ) ;
   }
 
   getUsersList(){
@@ -41,12 +42,13 @@ export class UsersComponent implements OnInit {
 //  this.updateList();
 
 // SECOND
-//    this.userService.deleteUser( id )
-//        .subscribe( () => this.updateList() )
+   this.userService.deleteUser( id )
+       .subscribe( () => this.updateList() )
 
-    this.userService.deleteUser( id )
-        .switchMap( () => this.userService.getUserList() )
-        .subscribe( ( list : Users[]) => this.users = list )
+// THIRD = BUG!!!
+//     this.userService.deleteUser( id )
+//         .switchMap( () => this.userService.getUserList() )
+//         .subscribe( ( list : Users[]) => this.users = list )
 
   }
 }

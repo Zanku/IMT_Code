@@ -24,8 +24,8 @@ export class UsersDetailsService {
     return of( userList );
   }
 
-  getUser( i : number ){
-    return userList.find( ({id}) => id === i );
+  getUser( i : number ) : Observable< User >{
+    return of( userList.find( ({id}) => id === i ) );
   }
 
   deleteUser( i : number ) : Observable< null >{
