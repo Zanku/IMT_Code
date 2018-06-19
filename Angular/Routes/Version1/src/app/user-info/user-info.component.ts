@@ -2,7 +2,7 @@ import { Component, OnInit }   from '@angular/core';
 import { UsersDetailsService } from "../users-details.service";
 import {ActivatedRoute, ParamMap, Params}      from "@angular/router";
 import { User }                from "../user";
-import { map }                 from "rxjs/operators";
+import { map, switchMap }                 from "rxjs/operators";
 
 @Component({
      selector: 'app-user-info',
@@ -24,19 +24,47 @@ export class UserInfoComponent implements OnInit {
   }
 
   getUser(){
+
+// FIRST
     //this.user = this.usersService.getUser( 1 );
 
     // Observable с текущем состоянием параметров
-    // thi s.route.paramMap
+    // this.route.paramMap
     //     .subscribe( ( params : Params ) => console.log( params.get('id') ) )
 
-    this.route.paramMap.pipe(
-        map( (params : ParamMap) => params.get('id') )
-    )
-        .subscribe( ( id ) => console.log( id ); )
+// SECOND
+//     this.route.paramMap.pipe(
+//         map( (params : ParamMap) => params.get('id') )
+//     )
+//         .subscribe( ( id ) => console.log( id ) )
+//
+//     this.usersService
+//         .getUser( 1 )
+//         .subscribe( ( data : User) => this.aUser = data );
+//   }
+//THIRD
+//        console.log( this.route.paramMap );
+        // this.route.paramMap.pipe(
+        //   map( (params : ParamMap) => params.get('id') )
+        // )
+// FOURTH   working
+//     this.route.paramMap.pipe(
+//         map( (params : ParamMap) => params.get('id') )
+//     )
+//          .subscribe( ( id ) =>  this.parNum = Number( id ) )
+//
+//     this.usersService
+//         .getUser( this.parNum )
+//         .subscribe( ( data : User) => this.aUser = data );
+//   }
 
-    this.usersService
-        .getUser( this.parNum )
+    this.route.paramMap.pipe(
+        switchMap( (params : ParamMap) => {
+         const id = Number( params.get('id') );
+
+         return this.usersService.getUser( id )
+        })
+    )
         .subscribe( ( data : User) => this.aUser = data );
   }
 }
