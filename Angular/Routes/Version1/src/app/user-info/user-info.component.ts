@@ -2,7 +2,7 @@ import { Component, OnInit }   from '@angular/core';
 import { UsersDetailsService } from "../users-details.service";
 import {ActivatedRoute, ParamMap, Params}      from "@angular/router";
 import { User }                from "../user";
-import { map }                 from "rxjs/operator";
+import { map }                 from "rxjs/operators";
 
 @Component({
      selector: 'app-user-info',
