@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { User } from '../user';
-import {UsersDetailsService} from "../users-details.service";
-import { switchMap } from "rxjs/operators";
-import {Observable, of } from "rxjs";
+import { Component, OnInit }    from '@angular/core';
+import { User }                 from '../user';
+import {UsersDetailsService}    from "../users-details.service";
+import { switchMap }            from "rxjs/operators";
+import { Observable, of }       from "rxjs";
 
 
 @Component({
@@ -42,13 +42,14 @@ export class UsersComponent implements OnInit {
 //  this.updateList();
 
 // SECOND
-   this.userService.deleteUser( id )
-       .subscribe( () => this.updateList() )
+//    this.userService.deleteUser( id )
+//        .subscribe( () => this.updateList() )
 
 // THIRD = BUG!!!
-//     this.userService.deleteUser( id )
-//         .switchMap( () => this.userService.getUserList() )
-//         .subscribe( ( list : Users[]) => this.users = list )
+    this.userService.deleteUser( id ).pipe(
+        switchMap( () => this.userService.getUserList() )
+    )
+        .subscribe( ( list : User[]) => this.users = list )
 
   }
 }
