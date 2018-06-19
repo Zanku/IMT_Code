@@ -1,11 +1,9 @@
 <div>
   <ul>
     <li *ngFor = "let aUser of users; index as i">
-      {{aUser.id}} - {{aUser.name}} - {{aUser.surname}} - {{aUser.email}}
+      {{aUser.id}} - {{aUser.name}}
       <button (click) = "deleteUser( aUser.id )">Delete</button>
-      <!--
-      <button (click)="">Tnfo</button>
-    -->
+      <button routerLink = "/users/{{i}}">Info</button>
     </li>
   </ul>
 </div>

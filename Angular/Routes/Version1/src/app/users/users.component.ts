@@ -1,6 +1,6 @@
 import { Component, OnInit }    from '@angular/core';
 import { User }                 from '../user';
-import {UsersDetailsService}    from "../users-details.service";
+import { UsersDetailsService }  from "../users-details.service";
 import { switchMap }            from "rxjs/operators";
 import { Observable, of }       from "rxjs";
 

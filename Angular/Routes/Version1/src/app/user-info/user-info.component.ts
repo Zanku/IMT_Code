@@ -12,7 +12,7 @@ import { map }                 from "rxjs/operators";
 export class UserInfoComponent implements OnInit {
 
   aUser : User;
-  param : number;
+  parNum : number;
 
   constructor(
       private usersService : UsersDetailsService,
@@ -33,10 +33,10 @@ export class UserInfoComponent implements OnInit {
     this.route.paramMap.pipe(
         map( (params : ParamMap) => params.get('id') )
     )
-        .subscribe( ( id ) => console.log( id ) )
+        .subscribe( ( id ) => console.log( id ); )
 
     this.usersService
-        .getUser( 1 )
+        .getUser( this.parNum )
         .subscribe( ( data : User) => this.aUser = data );
   }
 }
