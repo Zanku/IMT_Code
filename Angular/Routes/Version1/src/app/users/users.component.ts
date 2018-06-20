@@ -45,7 +45,7 @@ export class UsersComponent implements OnInit {
 //    this.userService.deleteUser( id )
 //        .subscribe( () => this.updateList() )
 
-// THIRD = BUG!!!
+// THIRD
     this.userService.deleteUser( id ).pipe(
         switchMap( () => this.userService.getUserList() )
     )

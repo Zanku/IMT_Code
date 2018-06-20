@@ -67,4 +67,9 @@ export class UserInfoComponent implements OnInit {
     )
         .subscribe( ( data : User) => this.aUser = data );
   }
+
+  deleteUser(){
+    this.usersService.deleteUser( this.aUser.id )
+        .subscribe( () => console.log("deleted!!!") )
+  }
 }

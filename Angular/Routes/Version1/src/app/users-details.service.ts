@@ -29,7 +29,9 @@ export class UsersDetailsService {
   }
 
   deleteUser( i : number ) : Observable< null >{
+      console.log( userList );
     userList = userList.filter( ({id}) => id !== i );
+      console.log( userList );
     return of( null )
   }
 }
