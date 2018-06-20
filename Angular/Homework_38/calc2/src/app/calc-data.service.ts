@@ -1,16 +1,15 @@
 import { Injectable } from '@angular/core';
 
-const LENGTH = 5;
-
 
 @Injectable({
   providedIn: 'root'
 })
 export class CalcDataService {
 
-  values : string[];
-   signs : string[];
-  result : number;
+  calcLength : number = 2;
+      values : string[];
+       signs : string[];
+      result : number;
 
   constructor() { }
 
@@ -18,8 +17,8 @@ export class CalcDataService {
     return this.values;
   }
 
-  addValue( data : string, id : number ){
-    this.values[ id ] = data;
+  addValue( aValue : string, id : number ){
+    this.values[ id ] = aValue;
   }
 
   getSigns() : string[] {
@@ -32,5 +31,13 @@ export class CalcDataService {
 
   getResult() : number {
     return this.result;
+  }
+
+  getLength() : number {
+    return this.calcLength;
+  }
+
+  setLength( len : number ){
+    this.calcLength = len;
   }
 }
