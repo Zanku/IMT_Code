@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { OperandComponent } from './operand/operand.component';
 import { CalcComponent } from './calc/calc.component';
 import { SignComponent } from './sign/sign.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { SignComponent } from './sign/sign.component';
     SignComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
