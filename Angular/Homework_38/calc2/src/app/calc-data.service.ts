@@ -1,32 +1,44 @@
-import { Injectable } from '@angular/core';
+import {Injectable, OnInit} from '@angular/core';
+import { Element } from './element';
 
+  const MAX_LENGTH = 100;
+  const MIN_LENGTH = 2;
 
 @Injectable({
   providedIn: 'root'
 })
-export class CalcDataService {
+export class CalcDataService implements OnInit{
 
-  calcLength : number = 2;
-      values : string[];
-       signs : string[];
+  calcLength : number = MIN_LENGTH;
+      values : string[] = [];
+       signs : string[] = [];
       result : number;
 
-  constructor() { }
+  constructor() {
+    this.elemsInit();
+  }
+
+  ngOnInit(){
+  }
+
 
   getValues() : string[] {
     return this.values;
   }
 
-  addValue( aValue : string, id : number ){
-    this.values[ id ] = aValue;
+  addValue( element : Element ){
+    this.values[ element.index ] = element.aValue;
+    console.log(this.values);
+    console.log( element );
   }
 
   getSigns() : string[] {
     return this.signs;
   }
 
-  addSign( data : string, id : number ){
-    this.signs[ id ] = data;
+  addSign( element : Element ){
+    this.signs[ element.index ] = element.aValue;
+    console.log(this.signs);
   }
 
   getResult() : number {
@@ -38,6 +50,35 @@ export class CalcDataService {
   }
 
   setLength( len : number ){
-    this.calcLength = len;
+    this.calcLength = this.lengthMinValueCheak( len );
+    this.elemsInit();
+  }
+
+  lengthMinValueCheak( len : number ){
+    if ( len < MIN_LENGTH ){
+      return MIN_LENGTH;
+    } else {
+      return len;
+    }
+  }
+
+  getMAX_LENGTH() : number{
+    return MAX_LENGTH;
+  }
+
+  getMIN_LENGTH() : number{
+    return MIN_LENGTH;
+  }
+
+  elemsInit(){
+    this.calcLength = this.getLength();
+    this. signs.length = MIN_LENGTH;
+    this.values.length = MIN_LENGTH;
+
+    for ( let i = 0; i < (this.calcLength - 1); i++){
+      this.values[i]     = "";
+      this. signs[i + 1] = "";
+    }
+    this.values[ this.calcLength - 1 ] =  "";
   }
 }
