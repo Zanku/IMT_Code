@@ -13,6 +13,7 @@ export class CalcComponent implements OnInit {
   maxLength : number;
 
   calcLength : number;
+      result : number;
       values : string[] = [];
        signs : string[] = [];
 
@@ -56,9 +57,8 @@ export class CalcComponent implements OnInit {
     return this.calcData.getResult();
   }
 
-
-
-  update(){
-
+  calculateCurrentResultEval(){
+    this.calcData.calculateResultEval();
+    this.result = this.getCurrentResult();
   }
 }

@@ -42,10 +42,6 @@ export class CalcDataService implements OnInit{
     console.log( element );
   }
 
-  getResult() : number {
-    return this.result;
-  }
-
   getLength() : number {
     return this.calcLength;
   }
@@ -77,9 +73,33 @@ export class CalcDataService implements OnInit{
     this.values.length = MIN_LENGTH;
 
     for ( let i = 0; i < (this.calcLength - 1); i++){
-      this.values[i]     = "";
+      this.values[i] = "";
       this. signs[i] = "";
     }
     this.values[ this.calcLength - 1 ] =  "";
+  }
+
+  getResult() : number {
+    return this.result;
+  }
+
+  calculateResultEval(){
+    try{
+      this.result = eval (this.getStringResult() );
+      console.log( this.result );
+    }
+    catch (e){
+      console.log(`calculateResultEval has some troubles: ${e}`);
+    }
+  }
+
+  getStringResult() : string {
+    let result = '';
+
+    for ( let i = 0; i < this.signs.length; i++ ){
+      result += this.values[ i ] + this.signs[ i ]
+    }
+    result += this.values[ this.signs.length ];
+    return result;
   }
 }
