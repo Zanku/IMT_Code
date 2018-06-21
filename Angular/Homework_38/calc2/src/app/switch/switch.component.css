@@ -1,0 +1,12 @@
+#main{
+    width: 300px;
+    text-align: center;
+    background-color: red;
+
+}
+
+.butt{
+    display: inline-block;
+    width : 46%;
+    margin: 2%;
+}

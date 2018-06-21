@@ -4,15 +4,24 @@ import { Element } from './element';
   const MAX_LENGTH = 100;
   const MIN_LENGTH = 2;
 
+
+
 @Injectable({
   providedIn: 'root'
 })
 export class CalcDataService implements OnInit{
 
-  calcLength : number = MIN_LENGTH;
-      values : string[] = [];
-       signs : string[] = [];
-      result : number;
+  private operation = {
+  '+' : this.operandsSumming,
+  '-' : this.operandsSubtraction,
+  '*' : this.operandsMultipling,
+  '/' : this.operandsSeparation
+}
+
+   calcLength : number = MIN_LENGTH;
+       values : string[] = [];
+        signs : string[] = [];
+       result : number;
 
   constructor() {
     this.elemsInit();
@@ -102,5 +111,53 @@ export class CalcDataService implements OnInit{
   clearData(){
     this.elemsInit();
     this.result = undefined;
+  }
+
+
+
+
+// functions for SECOND module
+
+
+  calculateResultSecond() : number {
+    this.result = this.operation[
+        this.signCheak(
+            this.signs[0]
+        )
+    ]( this.values[0], this.values[1] );
+
+    return this.result
+  }
+
+  operandsSumming( first : number, second : number ){
+    return first + second;
+  }
+
+  operandsSubtraction( first : number, second : number ){
+    return first - second;
+  }
+
+  operandsMultipling( first : number, second : number ){
+    return first * second;
+  }
+
+  operandsSeparation( first : number, second : number ){
+    return first / second;
+  }
+
+  signsListInit() : string[] {
+    let signsList : string[] = [];
+    for ( let key in this.operation ){
+      signsList.push( key )
+    }
+    return signsList;
+  }
+
+  signCheak( sign : string ){
+    if ( this.operation[ sign ] ){
+        return sign
+    } else {
+      return '+'
+    }
   }
 }

@@ -10,6 +10,7 @@ import { ResultComponent } from './result/result.component';
 import { SwitchComponent } from './switch/switch.component';
 import { CalcFuncComponent } from './calc-func/calc-func.component';
 import { RouterModule, Routes } from "@angular/router";
+import { SignFuncComponent } from './sign-func/sign-func.component';
 
 const routes : Routes = [
   { path : '', redirectTo : 'Hell', pathMatch : 'full' },
@@ -27,7 +28,8 @@ const routes : Routes = [
     SignComponent,
     ResultComponent,
     SwitchComponent,
-    CalcFuncComponent
+    CalcFuncComponent,
+    SignFuncComponent
   ],
   imports: [
     BrowserModule,
