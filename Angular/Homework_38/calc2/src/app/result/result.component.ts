@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-result',
@@ -8,10 +8,20 @@ import { Component, OnInit } from '@angular/core';
 export class ResultComponent implements OnInit {
 
   @Input() result;
+  @Output() onBtnResultClick = new EventEmitter();
+  @Output() onBtnClearClick = new EventEmitter();
+
 
   constructor() { }
 
   ngOnInit() {
   }
 
+  onResultBtnClick(){
+    this.onBtnResultClick.emit();
+  }
+
+  onClearBtnClick(){
+    this.onBtnClearClick.emit();
+  }
 }

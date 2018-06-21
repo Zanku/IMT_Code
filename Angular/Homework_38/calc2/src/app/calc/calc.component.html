@@ -6,6 +6,6 @@
   <app-operand [aValue] = "values[i]"     [index] = "i"
                (changeEvent) = "addCurrentValue( $event )"></app-operand>
 </div>
-<button (click)="calculateCurrentResultEval()">Calculate</button>
-<button>Clear</button>
-<app-result-eval [result]="result" ></app-result-eval>
+<app-result [result]="result"
+      (onBtnResultClick) = "calculateCurrentResultEval()"
+      (onBtnClearClick) = "clearCurrentData()"></app-result>

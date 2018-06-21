@@ -28,8 +28,6 @@ export class CalcDataService implements OnInit{
 
   addValue( element : Element ){
     this.values[ element.index ] = element.aValue;
-    console.log(this.values);
-    console.log( element );
   }
 
   getSigns() : string[] {
@@ -38,8 +36,6 @@ export class CalcDataService implements OnInit{
 
   addSign( element : Element ){
     this.signs[ element.index ] = element.aValue;
-    console.log(this.signs);
-    console.log( element );
   }
 
   getLength() : number {
@@ -85,8 +81,7 @@ export class CalcDataService implements OnInit{
 
   calculateResultEval(){
     try{
-      this.result = eval (this.getStringResult() );
-      console.log( this.result );
+      this.result = eval( this.getStringResult() );
     }
     catch (e){
       console.log(`calculateResultEval has some troubles: ${e}`);
@@ -100,6 +95,12 @@ export class CalcDataService implements OnInit{
       result += this.values[ i ] + this.signs[ i ]
     }
     result += this.values[ this.signs.length ];
+
     return result;
+  }
+
+  clearData(){
+    this.elemsInit();
+    this.result = undefined;
   }
 }

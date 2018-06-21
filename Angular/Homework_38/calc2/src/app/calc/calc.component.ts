@@ -32,7 +32,7 @@ export class CalcComponent implements OnInit {
     return this.calcData.getLength();
   }
 
-  setCurrentLength( event ){
+  setCurrentLength( event ) : void {
     this.calcData.setLength( Number( event.target.value ) );
     this.getCurrentLength();
   }
@@ -41,7 +41,7 @@ export class CalcComponent implements OnInit {
     return this.calcData.getValues()
   }
 
-  addCurrentValue( element : Element ){
+  addCurrentValue( element : Element ) : void {
     this.calcData.addValue( element );
   }
 
@@ -49,16 +49,19 @@ export class CalcComponent implements OnInit {
     return this.calcData.getSigns()
   }
 
-  addCurrentSign(element : Element ){
+  addCurrentSign(element : Element ) : void {
     this.calcData.addSign( element );
   }
 
-  getCurrentResult() : number {
-    return this.calcData.getResult();
+  getCurrentResult() : void {
+    this.result = this.calcData.getResult();
   }
 
-  calculateCurrentResultEval(){
+  calculateCurrentResultEval() : void {
     this.calcData.calculateResultEval();
-    this.result = this.getCurrentResult();
+  }
+
+  clearCurrentData() : void{
+    this.calcData.clearData();
   }
 }
