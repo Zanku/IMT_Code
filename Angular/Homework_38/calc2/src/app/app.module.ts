@@ -6,13 +6,15 @@ import { OperandComponent } from './operand/operand.component';
 import { CalcComponent } from './calc/calc.component';
 import { SignComponent } from './sign/sign.component';
 import {FormsModule} from "@angular/forms";
+import { ResultEvalComponent } from './result-eval/result-eval.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     OperandComponent,
     CalcComponent,
-    SignComponent
+    SignComponent,
+    ResultEvalComponent
   ],
   imports: [
     BrowserModule,
