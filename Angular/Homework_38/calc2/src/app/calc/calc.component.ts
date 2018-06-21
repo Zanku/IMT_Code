@@ -48,7 +48,7 @@ export class CalcComponent implements OnInit {
     return this.calcData.getSigns()
   }
 
-  addCurrentSing( element : Element ){
+  addCurrentSign(element : Element ){
     this.calcData.addSign( element );
   }
 

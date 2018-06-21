@@ -39,6 +39,7 @@ export class CalcDataService implements OnInit{
   addSign( element : Element ){
     this.signs[ element.index ] = element.aValue;
     console.log(this.signs);
+    console.log( element );
   }
 
   getResult() : number {
@@ -71,13 +72,13 @@ export class CalcDataService implements OnInit{
   }
 
   elemsInit(){
-    this.calcLength = this.getLength();
-    this. signs.length = MIN_LENGTH;
+    this.   calcLength = this.getLength();
+    this. signs.length = MIN_LENGTH - 1;
     this.values.length = MIN_LENGTH;
 
     for ( let i = 0; i < (this.calcLength - 1); i++){
       this.values[i]     = "";
-      this. signs[i + 1] = "";
+      this. signs[i] = "";
     }
     this.values[ this.calcLength - 1 ] =  "";
   }
