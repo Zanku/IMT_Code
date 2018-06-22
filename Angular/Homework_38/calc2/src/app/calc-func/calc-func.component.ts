@@ -28,16 +28,22 @@ export class CalcFuncComponent implements OnInit {
   addCurrentValue( elem : Element ) : void {
     this.calcData.addValue( elem );
   }
-  addCurrentSign( elem : Element ){
-      console.log( elem );
+
+  addCurrentSign( elem : Element ) : void {
     this.calcData.addSign( elem );
   }
 
   getCurrentResult() : void {
-    this.result = this.calcData.calculateResultSecond()
+    this.result = this.calcData.getResult()
   }
 
-  clearCurrentData(){
+  calculateResult() : void {
+    this.calcData.calculateResultSecond();
+    this.getCurrentResult();
+  }
+
+  clearCurrentData() : void {
     this.calcData.clearData()
+    this.getCurrentResult();
   }
 }

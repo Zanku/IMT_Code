@@ -28,40 +28,46 @@ export class CalcComponent implements OnInit {
   ngOnInit() {
   }
 
-  getCurrentLength() : number {
-    return this.calcData.getLength();
-  }
-
   setCurrentLength( event ) : void {
     this.calcData.setLength( Number( event.target.value ) );
-    this.getCurrentLength();
-  }
-
-  getCurrentValues() : string[] {
-    return this.calcData.getValues()
   }
 
   addCurrentValue( element : Element ) : void {
     this.calcData.addValue( element );
   }
 
-  getCurrentSigns() : string[] {
-    return this.calcData.getSigns()
-  }
-
   addCurrentSign(element : Element ) : void {
     this.calcData.addSign( element );
   }
 
-  getCurrentResult() : void {
-    this.result = this.calcData.getResult();
-  }
+   getCurrentResult() : void {
+   this.result = this.calcData.getResult();
+   }
+
 
   calculateCurrentResultEval() : void {
     this.calcData.calculateResultEval();
+    this.getCurrentResult();
   }
 
   clearCurrentData() : void{
     this.calcData.clearData();
+    this.getCurrentResult();
   }
+
+  /*
+   getCurrentLength() : number {
+   return this.calcData.getLength();
+   }
+   */
+  /*
+   getCurrentSigns() : string[] {
+   return this.calcData.getSigns()
+   }
+   */
+  /*
+   getCurrentValues() : string[] {
+   return this.calcData.getValues()
+   }
+   */
 }

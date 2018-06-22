@@ -1,8 +1,8 @@
 import {Injectable, OnInit} from '@angular/core';
 import { Element } from './element';
 
-  const MAX_LENGTH = 100;
-  const MIN_LENGTH = 2;
+const MAX_LENGTH = 100;
+const MIN_LENGTH = 2;
 
 
 
@@ -18,11 +18,11 @@ export class CalcDataService implements OnInit{
   '/' : this.operandsSeparation
 }
 
-    calcLength : number = MIN_LENGTH;
-        values : string[] = [];
-  valuesNumber : number[] = [];
-         signs : string[] = [];
-        result : number;
+  private   calcLength : number = MIN_LENGTH;
+  private       values : string[] = [];
+  private valuesNumber : number[] = [];
+  private        signs : string[] = [];
+  private       result : number;
 
   constructor() {
     this.elemsInit();
@@ -31,12 +31,11 @@ export class CalcDataService implements OnInit{
   ngOnInit(){
   }
 
-
   getValues() : string[] {
     return this.values;
   }
 
-  addValue( element : Element ){
+  addValue( element : Element ) : void {
     this.values[ element.index ] = element.aValue;
   }
 
@@ -44,7 +43,7 @@ export class CalcDataService implements OnInit{
     return this.signs;
   }
 
-  addSign( element : Element ){
+  addSign( element : Element ) : void {
     this.signs[ element.index ] = element.aValue;
   }
 
@@ -65,11 +64,11 @@ export class CalcDataService implements OnInit{
     }
   }
 
-  getMAX_LENGTH() : number{
+  getMAX_LENGTH() : number {
     return MAX_LENGTH;
   }
 
-  getMIN_LENGTH() : number{
+  getMIN_LENGTH() : number {
     return MIN_LENGTH;
   }
 
@@ -91,7 +90,7 @@ export class CalcDataService implements OnInit{
 
   calculateResultEval(){
     try{
-      this.result = eval( this.getStringResult() );
+      return this.result = eval( this.getStringResult() );
     }
     catch (e){
       console.log(`calculateResultEval has some troubles: ${e}`);
@@ -109,7 +108,7 @@ export class CalcDataService implements OnInit{
     return result;
   }
 
-  clearData(){
+  clearData() : void {
     this.elemsInit();
     this.result = undefined;
   }
@@ -120,29 +119,27 @@ export class CalcDataService implements OnInit{
 // functions for SECOND module
 
 
-  calculateResultSecond() : number {
+  calculateResultSecond() : void {
     this.trabsformStringToNumber();
 
     this.result = this.operation[
         this.signCheak( this.signs[0] )
     ]( this.valuesNumber[0], this.valuesNumber[1] );
-
-    return this.result
   }
 
-  operandsSumming( first : number, second : number ){
+  operandsSumming    ( first : number, second : number ) : number {
     return first + second;
   }
 
-  operandsSubtraction( first : number, second : number ){
+  operandsSubtraction( first : number, second : number ) : number {
     return first - second;
   }
 
-  operandsMultipling( first : number, second : number ){
+  operandsMultipling ( first : number, second : number ) : number {
     return first * second;
   }
 
-  operandsSeparation( first : number, second : number ){
+  operandsSeparation ( first : number, second : number ) : number {
     return first / second;
   }
 
@@ -154,7 +151,7 @@ export class CalcDataService implements OnInit{
     return signsList;
   }
 
-  signCheak( sign : string ){
+  signCheak( sign : string ) : string {
 
     if ( this.operation[ sign ] ){
         return sign
@@ -163,7 +160,7 @@ export class CalcDataService implements OnInit{
     }
   }
 
-  trabsformStringToNumber(){
+  trabsformStringToNumber() : void {
       for ( let i = 0; i < MIN_LENGTH; i++){
           this.cheakEmpty( this.values[i] );
           this.valuesNumber[i] = Number( this.values[i] );
@@ -171,13 +168,13 @@ export class CalcDataService implements OnInit{
       }
   }
 
-  cheakNaN( num : number ){
+  cheakNaN( num : number ) : void {
       if ( Object.is( num, NaN ) ){
           throw new Error("You have Symbols in Heaven, but here must be Digits")
       }
   }
 
-  cheakEmpty( str : string ){
+  cheakEmpty( str : string ) : void {
       if ( str === '' ){
           throw new Error("Fill in all the fields");
       }
