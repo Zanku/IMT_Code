@@ -1,5 +1,5 @@
 <select [value] = "currentSign" (input)="changeSign( $event )" >
   <option value="" disabled>sign</option>
   <option *ngFor="let aSign of signsList; index as i"
-          value="aSign">{{aSign}}</option>
+          [value]="aSign">{{aSign}}</option>
 </select>

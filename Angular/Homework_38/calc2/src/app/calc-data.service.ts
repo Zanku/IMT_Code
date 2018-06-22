@@ -18,10 +18,11 @@ export class CalcDataService implements OnInit{
   '/' : this.operandsSeparation
 }
 
-   calcLength : number = MIN_LENGTH;
-       values : string[] = [];
-        signs : string[] = [];
-       result : number;
+    calcLength : number = MIN_LENGTH;
+        values : string[] = [];
+  valuesNumber : number[] = [];
+         signs : string[] = [];
+        result : number;
 
   constructor() {
     this.elemsInit();
@@ -120,11 +121,11 @@ export class CalcDataService implements OnInit{
 
 
   calculateResultSecond() : number {
+    this.trabsformStringToNumber();
+
     this.result = this.operation[
-        this.signCheak(
-            this.signs[0]
-        )
-    ]( this.values[0], this.values[1] );
+        this.signCheak( this.signs[0] )
+    ]( this.valuesNumber[0], this.valuesNumber[1] );
 
     return this.result
   }
@@ -154,10 +155,31 @@ export class CalcDataService implements OnInit{
   }
 
   signCheak( sign : string ){
+
     if ( this.operation[ sign ] ){
         return sign
     } else {
       return '+'
     }
+  }
+
+  trabsformStringToNumber(){
+      for ( let i = 0; i < MIN_LENGTH; i++){
+          this.cheakEmpty( this.values[i] );
+          this.valuesNumber[i] = Number( this.values[i] );
+          this.cheakNaN( this.valuesNumber[i] )
+      }
+  }
+
+  cheakNaN( num : number ){
+      if ( Object.is( num, NaN ) ){
+          throw new Error("You have Symbols in Heaven, but here must be Digits")
+      }
+  }
+
+  cheakEmpty( str : string ){
+      if ( str === '' ){
+          throw new Error("Fill in all the fields");
+      }
   }
 }

@@ -29,6 +29,7 @@ export class CalcFuncComponent implements OnInit {
     this.calcData.addValue( elem );
   }
   addCurrentSign( elem : Element ){
+      console.log( elem );
     this.calcData.addSign( elem );
   }
 
