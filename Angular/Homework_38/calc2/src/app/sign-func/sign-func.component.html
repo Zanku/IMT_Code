@@ -1,4 +1,5 @@
-<select [value] = "currentSign" (input)="changeSign( $event )" >
+<select [(ngModel)] = "sign" #item (input) = "changeSign( item )"
+        name = "sign" #name = "ngModel" required >
   <option value="" disabled>sign</option>
   <option *ngFor="let aSign of signsList; index as i"
           [value]="aSign">{{aSign}}</option>

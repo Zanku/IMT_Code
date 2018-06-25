@@ -1,12 +1,17 @@
 #main{
     width: 300px;
     text-align: center;
-    background-color: red;
+    background: linear-gradient(to right, RGB(52,36,3), RGB(106,161,168) );
+    margin: auto;
 
 }
 
-.butt{
+.butt {
     display: inline-block;
-    width : 46%;
+    width: 46%;
     margin: 2%;
+}
+
+.active{
+    background-color: orange;
 }

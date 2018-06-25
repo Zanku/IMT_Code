@@ -2,3 +2,8 @@
     background-color: lightcoral;
     color: darkred;
 }
+
+input{
+    text-align: center;
+    width: 10%;
+}

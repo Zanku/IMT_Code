@@ -21,9 +21,9 @@ export class SignFuncComponent implements OnInit {
     return new Element( thisSign, index );
   }
 
-  changeSign( event ){
+  changeSign( item ){
     this.addSign.emit(
-        this.createElement( event.target.value, this.index )
+        this.createElement( item.value, this.index )
     )
   }
 }

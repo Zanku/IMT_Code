@@ -51,6 +51,7 @@ export class CalcFuncComponent implements OnInit {
     // Баг с проверкой    !!!!!!!!!!!!!!!!!!!!!!!!!!
 
     //if ( form.touched === true && form.status === "VALID"){
+    console.log( form );
     this.calculateResult();
     //}
   }
