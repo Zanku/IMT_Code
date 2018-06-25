@@ -17,8 +17,8 @@ export class SignComponent implements OnInit {
   ngOnInit() {
   }
 
-  onSignInput( event ){
-    this.signInput.emit( this.dataGeneration( event.target.value ) );
+  onSignInput( item ){
+    this.signInput.emit( this.dataGeneration( item.value ) );
   }
 
   dataGeneration( aSign ){

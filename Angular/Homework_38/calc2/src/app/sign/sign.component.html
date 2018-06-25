@@ -1,2 +1,10 @@
-<input name = "sign" placeholder="sign" [value] = "sign"
-        (input) = "onSignInput( $event )">
+<input name = "sign" placeholder="sign"
+    [(ngModel)] = "sign" #item (input) = "onSignInput( item )">
+<div class="warning"
+     [hidden] = "name.untouched || name.valid">
+    Field is Required
+</div>
+<!--
+[value] = "sign"
+        (input) = "onSignInput( $event )"
+-->
