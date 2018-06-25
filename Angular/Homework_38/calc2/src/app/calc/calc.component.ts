@@ -50,9 +50,10 @@ export class CalcComponent implements OnInit {
     this.getCurrentResult();
   }
 
-  clearCurrentData() : void{
-    this.calcData.clearData();
+  clearCurrentData( form : object ) : void{
+    this.calcData.clearData( form );
     this.getCurrentResult();
+
   }
 
   /*
@@ -71,7 +72,11 @@ export class CalcComponent implements OnInit {
    }
    */
 
-  onSubmit(){
+  onSubmit( form ){
+// Баг с проверкой    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
+    //if ( form.touched === true && form.status === "VALID"){
+      this.calculateCurrentResultEval();
+    //}
   }
 }

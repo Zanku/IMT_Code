@@ -1,4 +1,4 @@
-<input name = "sign" placeholder="sign" #name = "ngModel"
+<input name = "sign" placeholder="sign" #name = "ngModel" required
     [(ngModel)] = "sign" #item (input) = "onSignInput( item )">
 <div class="warning"
      [hidden] = "name.untouched || name.valid">

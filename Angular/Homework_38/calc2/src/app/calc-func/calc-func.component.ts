@@ -42,12 +42,16 @@ export class CalcFuncComponent implements OnInit {
     this.getCurrentResult();
   }
 
-  clearCurrentData() : void {
-    this.calcData.clearData()
+  clearCurrentData( form : object ) : void {
+    this.calcData.clearData( form )
     this.getCurrentResult();
   }
 
-  onSubmit(){
-    console.log("TEST!!!");
+  onSubmit( form ){
+    // Баг с проверкой    !!!!!!!!!!!!!!!!!!!!!!!!!!
+
+    //if ( form.touched === true && form.status === "VALID"){
+    this.calculateResult();
+    //}
   }
 }

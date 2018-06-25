@@ -108,9 +108,10 @@ export class CalcDataService implements OnInit{
     return result;
   }
 
-  clearData() : void {
+  clearData( form : object ) : void {
     this.elemsInit();
     this.result = undefined;
+    this.formCleaning( form );
   }
 
 
@@ -178,5 +179,10 @@ export class CalcDataService implements OnInit{
       if ( str === '' ){
           throw new Error("Fill in all the fields");
       }
+  }
+
+  formCleaning( form : any ) : void {
+    form.pristine = true;
+    form.touched = false;
   }
 }
