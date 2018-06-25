@@ -1,1 +1,9 @@
-<input name="operand" placeholder="digits" [value]="aValue" (change)="onElementChange( $event )" >
+<input name="operand" placeholder="digits"
+       #spy required
+       #name = "ngModel"
+       [(ngModel)] = "aValue" #item (change)="onElementChange( item )">
+<br>TODO: remote this: {{spy.className}}
+
+<div [hidden] = "name.pristine || nave.valid">
+    Field is required
+</div>

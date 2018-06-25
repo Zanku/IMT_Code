@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, DoCheck } from '@angular/core';
 import {CalcDataService} from "../calc-data.service";
 import { Element } from "../element";
 
@@ -7,7 +7,7 @@ import { Element } from "../element";
   templateUrl: './calc.component.html',
   styleUrls: ['./calc.component.css']
 })
-export class CalcComponent implements OnInit {
+export class CalcComponent implements OnInit, DoCheck {
 
   minLength : number;
   maxLength : number;
@@ -70,4 +70,8 @@ export class CalcComponent implements OnInit {
    return this.calcData.getValues()
    }
    */
+
+  ngDoCheck(){
+    console.log( this.values );
+  }
 }

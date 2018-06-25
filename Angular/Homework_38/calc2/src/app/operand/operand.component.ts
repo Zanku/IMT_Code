@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, Output } from '@angular/core';
 import { Element } from '../element';
 
 @Component({
@@ -6,7 +6,7 @@ import { Element } from '../element';
   templateUrl: './operand.component.html',
   styleUrls: ['./operand.component.css']
 })
-export class OperandComponent implements OnInit {
+export class OperandComponent {
 
   @Input() aValue : string;
   @Input() index : number;
@@ -19,8 +19,12 @@ export class OperandComponent implements OnInit {
   ngOnInit() {
   }
 
-  onElementChange( event ){
-    this.element = new Element( event.target.value, this.index );
+  onElementChange( item ){
+    this.createElement( item );
     this.changeEvent.emit( this.element );
+  }
+
+  createElement( item ){
+    this.element = new Element( item.value, this.index );
   }
 }

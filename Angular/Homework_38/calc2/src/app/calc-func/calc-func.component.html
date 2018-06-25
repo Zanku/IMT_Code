@@ -1,10 +1,17 @@
-<div *ngFor="let aValue of values; index as i">
-  <app-operand (changeEvent) = "addCurrentValue( $event )"
-                    [aValue] = "values[i]" [index] = "i"></app-operand><br/>
-  <app-sign-func [signsList] = "signsList" [index] = "i"
-                 (addSign) = "addCurrentSign( $event )"
-                 *ngIf = "i === 0"></app-sign-func>
-</div>
-<app-result [result]="result"
-  (onBtnResultClick) = "calculateResult()"
-   (onBtnClearClick) = "clearCurrentData()"></app-result>
+<form #calc = "ngForm">
+  <div *ngFor="let aValue of values; index as i">
+    <app-operand (changeEvent) = "addCurrentValue( $event )"
+                 [aValue] = "values[i]" [index] = "i"></app-operand><br/>
+    <app-sign-func [signsList] = "signsList" [index] = "i"
+                   (addSign) = "addCurrentSign( $event )"
+                   *ngIf = "i === 0"></app-sign-func>
+  </div>
+  <app-result [result]="result"
+              (onBtnResultClick) = "calculateResult()"
+              (onBtnClearClick) = "clearCurrentData()"></app-result>
+</form>
+
+
+<!--
+
+-->
