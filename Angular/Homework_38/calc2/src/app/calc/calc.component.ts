@@ -7,7 +7,7 @@ import { Element } from "../element";
   templateUrl: './calc.component.html',
   styleUrls: ['./calc.component.css']
 })
-export class CalcComponent implements OnInit, DoCheck {
+export class CalcComponent implements OnInit {
 
   minLength : number;
   maxLength : number;
@@ -71,7 +71,7 @@ export class CalcComponent implements OnInit, DoCheck {
    }
    */
 
-  ngDoCheck(){
-    console.log( this.values );
+  onSubmit(){
+
   }
 }

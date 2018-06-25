@@ -1,4 +1,4 @@
-<form #calc = "ngForm">
+<form (ngSubmit) = "onSubmit()" #calc = "ngForm">
   <div *ngFor="let aValue of values; index as i">
     <app-operand (changeEvent) = "addCurrentValue( $event )"
                       [aValue] = "values[i]" [index] = "i"></app-operand><br/>
@@ -11,7 +11,3 @@
               (onBtnClearClick) = "clearCurrentData()"></app-result>
 </form>
 
-
-<!--
-
--->

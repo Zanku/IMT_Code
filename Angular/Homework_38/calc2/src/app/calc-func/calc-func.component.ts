@@ -46,4 +46,8 @@ export class CalcFuncComponent implements OnInit {
     this.calcData.clearData()
     this.getCurrentResult();
   }
+
+  onSubmit(){
+    console.log("TEST!!!");
+  }
 }

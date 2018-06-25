@@ -1,11 +1,13 @@
-<input type="range" min = "minLength" max="maxLength" [value] = "calcLength" (change)="setCurrentLength( $event )">
-<div *ngFor="let aValue of values; index as i">
-  <app-sign *ngIf = " i > 0 "
-                 (signInput) = "addCurrentSign( $event )"
-                 [sign] =  "signs[i - 1]" [index] = "i - 1" ></app-sign><br/>
-  <app-operand [aValue] = "values[i]"     [index] = "i"
-               (changeEvent) = "addCurrentValue( $event )"></app-operand>
-</div>
-<app-result [result]="result"
-      (onBtnResultClick) = "calculateCurrentResultEval()"
-      (onBtnClearClick) = "clearCurrentData()"></app-result>
+<form (ngSubmit) = "onSubmit()" #calc = "ngForm">
+  <input type="range" min = "minLength" max="maxLength" [value] = "calcLength" (change)="setCurrentLength( $event )">
+  <div *ngFor="let aValue of values; index as i">
+    <app-sign *ngIf = " i > 0 "
+              (signInput) = "addCurrentSign( $event )"
+                   [sign] =  "signs[i - 1]" [index] = "i - 1" ></app-sign><br/>
+    <app-operand [aValue] = "values[i]"     [index] = "i"
+            (changeEvent) = "addCurrentValue( $event )"></app-operand>
+  </div>
+  <app-result [result]="result"
+        (onBtnResultClick) = "calculateCurrentResultEval()"
+        (onBtnClearClick) = "clearCurrentData()"></app-result>
+</form>
