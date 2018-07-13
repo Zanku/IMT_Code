@@ -1,0 +1,48 @@
+extends header
+
+block content
+    div(class="butt")
+        table
+            tr
+                td город
+                td Днепр
+            tr
+                td адрес
+                td ул. Троицкая, 21 Г
+            tr
+                td телефон
+                td +38(056) 767-27-67
+            tr
+                td Email
+                td support@online.imt.academy
+    div(class="butt")
+        form(method="post")
+            input(type="text" placeholder="Логин Вашего Email" name="login" autofocus)
+            br
+            input(type="text" placeholder="Сервис отправки почты (gmail)" name="service" )
+            br
+            input(type="password" placeholder="Пароль" name="password")
+            br
+            input(type="text" placeholder="Тема" name="topic")
+            br
+            input(type="text" placeholder="Email получателя" name="email")
+            br
+            textarea(type="text" placeholder="Текст" name="text")
+            br
+            input(type="submit" value="Send Email" style="width: 100px")
+
+            script.
+                var form = document.getElementsByTagName('form')[0];
+                form.action = 'contacts'
+                form.onsubmit = function() {
+                var check = true;
+                var inputs = document.getElementsByTagName('input');
+                var length = inputs.length - 1;
+                for ( var i = 0; i < length; i++ ){
+                if ( inputs[i].value === '' ){
+                inputs[i].style.border = "2px solid red";
+                check = false;
+                }
+                }
+                return check;
+                };
