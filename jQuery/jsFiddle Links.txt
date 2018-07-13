@@ -1,0 +1,13 @@
+jQuery Homeworks:
+
+24. My to do list "ver. 1" :	https://jsfiddle.net/zanku/3zz9va7m/96/
+25. My to do list "ver. 2" :	https://jsfiddle.net/zanku/t1oryg2k/293/
+26. My to do list "ver. 3" :	https://jsfiddle.net/zanku/ujsdtxuf/78/
+27. Animation
+	27.1. Solar System : 	https://jsfiddle.net/zanku/rj1rscdg/35/
+	27.2. Spinner : 	https://jsfiddle.net/zanku/e15rd6ub/5/
+	27.3. Walking Stripe :	https://jsfiddle.net/zanku/bewvcL21/13/
+
+28. Даша путешественница :	https://jsfiddle.net/zanku/hmxorfq3/39/
+
+29. Ajax : 			https://jsfiddle.net/zanku/n18cxnye/39/

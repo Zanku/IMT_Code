@@ -1,0 +1,22 @@
+body{
+  text-align: center;
+}
+
+.main{
+  position : relative;
+  width : 600px;
+  height : 400px;
+  background-color : black;
+  margin-left : auto;
+  margin-right : auto; 
+}
+
+.elem{
+  /*
+  width : 66px;
+  height : 50px;
+  */
+  background-color : red;
+  position : absolute;
+  bottom : 0px;
+}

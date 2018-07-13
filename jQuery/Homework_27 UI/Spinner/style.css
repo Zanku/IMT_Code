@@ -1,0 +1,30 @@
+body{
+  text-align: center;
+}
+
+
+.main{
+  
+  background-image : url("images/spinner.jpg");
+ 
+  width : 200px;
+  height : 200px;
+  background-size : 100%;
+  position : relative;
+  background-color : yellow;
+  margin : auto;
+  text-align : center;
+/*
+  transform : rotate(10deg);
+*/
+}
+
+#center{
+  top : 72px;
+  width : 55px;
+  height : 55px;
+  position : absolute;
+  margin : 0 25px 0 72px;
+  background-color : aquamarine;
+  border-radius : 50px;
+}

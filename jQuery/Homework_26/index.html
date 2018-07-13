@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link href="styles.css" type="text/css" rel="stylesheet">
+	<script src="http://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+            crossorigin="anonymous"></script>
+    <script src="code.js"></script>
+	<title>My to do list</title>
+</head>
+<body>
+	<div id = "main">
+  <h1>My To Do List</h1>
+  <p id="count">Count : </p>
+  <table name = "list">
+    <h2>List</h2>
+    <tr class="hold">
+      <th>Item List</th>
+      <th>Priority</th>
+      <th>Deadline</th>
+    </tr>
+    <tr>
+      <th>Завладеть миром</th>
+      <th>High</th>
+      <th>2018-04-04</th>
+    </tr>
+    <tr>
+      <th>Вынести мусор</th>
+      <th>Medium</th>
+      <th>2018-04-05</th>
+    </tr>
+    <tr>
+      <th>Помыть посуду</th>
+      <th>Low</th>
+      <th>2018-04-03</th>
+    </tr>
+  </table>
+  <table name = "done">
+    <h2>Done List</h2>
+    <tr>
+      <th>Item List</th>
+      <th>Priority</th>
+      <th>Date of Completion</th>
+    </tr>
+    </table>
+  <div id = "addInfo">
+    <input type = "text">
+    <select>
+      <option selected="selected" disabled>Choose Priority</option>
+      <option>Very High</option>
+      <option>High</option>
+      <option>Medium</option>
+      <option>Low</option>
+      <option>Far Future</option>
+    </select>
+    <input type = "date"><br>
+    <input type = "button" value = "Add">
+    <input type = "button" value = "Remove">  
+  </div>
+</div>
+</body>
+</html>

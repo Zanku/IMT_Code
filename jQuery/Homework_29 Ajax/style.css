@@ -1,0 +1,68 @@
+body{
+  position : relative;
+}
+
+#container{
+  width : 50%;
+  margin : 50px 0 0 0;
+  text-align : center;
+  background-color : orange;
+  position : absolute;
+  right : 0;
+  overflow : auto ;
+  opacity : 0.9;
+  padding : 5px;
+}
+
+#info{
+  width : 50%;
+  height : 400px;
+  text-align : left;
+  background-color : white;
+  position : absolute;
+  overflow : auto ;
+}
+
+input{
+    width : 80%;
+    margin : 5px;
+    text-align : center;
+}
+
+.alert{
+  border : 2px solid red;
+}
+
+.warn{
+  color : red;
+  margin : 0;
+  text-align : center;
+  font-weight : bold;
+}
+
+table{
+  margin : auto;
+}
+
+tr{
+  margin-left : 10px;
+  
+}
+
+td{
+  padding : 5px 10px 5px 10px;
+  background-color : aqua;
+  border-radius : 10px;
+  font-weight : bold;
+}
+
+.selected{
+  background-color : red;
+  border : 2px solid red;
+}
+
+.report{
+  padding : 5px;
+  font-size : 14px;
+  margin : 0;
+}

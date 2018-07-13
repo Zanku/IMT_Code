@@ -1,0 +1,122 @@
+body{
+  background-image : url("images/room.jpg");
+  background-size : 120%;
+}
+
+#container{
+  margin: 50px auto;
+  background-color : thistle;
+  width : 400px;
+  min-height : 350px;
+  text-align : center;
+  padding : 20px;
+  position : relative;
+  opacity : 0.85;
+  border-radius : 10px;
+}
+
+.item{
+  margin : 2px 0px;
+  padding : 5px;
+  background-color : yellow;
+  border-radius : 5px;
+  border : 1px solid black;
+  font-weight : bold;
+  z-index : 1;
+}
+
+#items{
+  margin: 0px;
+  background-color : none;
+  padding : 5px;
+  position : relative;
+  
+}
+#basket{
+  background-image : url("images/shopping_cart.png");
+  background-size : 100%;
+   width : 150px;
+  height : 120px;
+  position : absolute;
+  left : 0;
+  top : 100%;
+  z-index : 0;
+}
+
+.delete{
+  text-align : right;
+  background-image : url("images/delete.png");
+  background-size : 100%;
+  width : 20px;
+  height : 20px;
+  position : relative;
+  top : 3px;
+}
+
+#list{
+  background-color : none;
+  width : 64%;
+  text-align : left;
+  position : absolute;
+  top : 100%;
+  right : 0px;
+  max-height : 100%;
+  overflow : auto ;
+}
+
+ol{
+  margin-left : 20px;
+  padding : 5px;
+  font-weight : bold;
+  font-size : 16px;
+}
+li{
+ padding : 2px; 
+}
+ol li:nth-child(2n - 1){
+  background-color : plum;
+  border-radius : 5px;
+}
+ 
+.text{
+  width : 80%;
+  background-color : none;
+  
+}
+
+.line{
+    display: inline-block;
+}
+
+.buttons{
+  text-align : center;
+}
+
+.confirmation{
+  text-align : left;
+  font-size : 20px;
+}
+
+#dasha-left{
+  background-image : url("images/dasha.png");
+  background-size : 100%;
+  width : 200px;
+  height : 200px;
+  position : absolute;
+  top : 0;
+  left : -40%;
+}
+#dasha-right{
+  background-image : url("images/dasha.png");
+  background-size : 100%;
+  width : 200px;
+  height : 200px;
+  position : absolute;
+  top : 0;
+  right : -40%;
+      -webkit-transform: scaleX(-1);
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -ms-transform: scaleX(-1);
+    transform: scaleX(-1);
+}

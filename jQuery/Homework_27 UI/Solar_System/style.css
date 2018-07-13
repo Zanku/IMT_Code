@@ -1,0 +1,45 @@
+body{
+  background-color : black;
+}
+
+#container{
+  width : 1024px;
+  height : 768px;
+  background-color : red;
+  margin : auto;
+  position : relative;
+  background-image : 
+  linear-gradient(to bottom, black 0%, transparent 40%),
+  linear-gradient(to top, black 0%, transparent 40%), 
+  linear-gradient(to left, black 0%, transparent 40%),
+  linear-gradient(to right, black 0%, transparent 40%),
+  url('images/star_field.png');
+  background-size : 100%;
+  
+  
+}
+
+.ball{
+  width : 80px;
+  height : 80px;
+  background-size : 100%;
+  position : absolute;
+}
+
+#left{
+  width : 200px;
+  height : 200px;
+  top : 0;
+  left : 0;
+  position : absolute;
+    background-color : yellow;
+}
+#right{
+  width : 200px;
+  height : 200px;
+  bottom : 0;
+  right : 0;
+  position : absolute;
+  
+    background-color : yellow;
+}
