@@ -8,6 +8,6 @@ jQuery Homeworks:
 	27.2. Spinner : 	https://jsfiddle.net/zanku/e15rd6ub/5/
 	27.3. Walking Stripe :	https://jsfiddle.net/zanku/bewvcL21/13/
 
-28. Даша путешественница :	https://jsfiddle.net/zanku/hmxorfq3/39/
+28. Dasha traveler :		https://jsfiddle.net/zanku/hmxorfq3/39/
 
 29. Ajax : 			https://jsfiddle.net/zanku/n18cxnye/39/
